@@ -1,0 +1,164 @@
+@charset "ISO-8859-1";
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000; /* Dark background */
+    color: #00ff00; /* Neon green text */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Roaming lights background effect */
+body::before, body::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.15) 10%, transparent 70%);
+    animation: roam 10s linear infinite;
+}
+
+body::after {
+    animation-delay: 5s;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.15) 10%, transparent 70%);
+}
+
+@keyframes roam {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(50%, -50%) rotate(45deg);
+    }
+    50% {
+        transform: translate(0, -100%) rotate(90deg);
+    }
+    75% {
+        transform: translate(-50%, -50%) rotate(135deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(180deg);
+    }
+}
+
+/* Container styling */
+.container {
+    z-index: 1; /* Keep content above roaming lights */
+    text-align: center;
+    padding: 20px;
+    width: 30%; /* Increase the container width to 80% of the viewport */
+    max-width: 800px; /* Set a maximum width for larger screens */
+    border: 2px solid #00ff00; /* Green neon border */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6), 0 0 25px rgba(0, 255, 0, 0.4); /* Neon glow effect */
+}
+
+/* Glitchy, flickering text */
+h2 {
+    color: #00ff00;
+    font-size: 24px;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
+    }
+    50% {
+        opacity: 0.8;
+        text-shadow: 0 0 5px #00ff00, 0 0 20px #ff0000, 0 0 30px #00ff00;
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #ff0000, 0 0 30px #00ff00;
+    }
+}
+
+/* Animated button and link */
+.animated-button, .animated-link {
+    padding: 12px 20px;
+    margin-top: 15px;
+    color: #00ff00;
+    background-color: #111111;
+    border: 1px solid #00ff00;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Neon glow effect */
+}
+
+.animated-button:hover, .animated-link:hover {
+    background-color: #333333;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8); /* Intense glow on hover */
+}
+
+/* Hacker-style scrolling text (for the marquee) */
+marquee h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    color: #33ff33;
+    text-shadow: 0 0 5px #33ff33, 0 0 10px #00ff00;
+    animation: scroll-text 10s linear infinite;
+}
+
+@keyframes scroll-text {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Additional glitch effect on hovering links and buttons */
+.animated-button:active, .animated-link:active {
+    color: #00ff00;
+    background-color: #222222;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 1);
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #ff0000, 0 0 15px #00ff00;
+}
+/* Scrolling text effect */
+.scrolling-text {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    padding: 10px 0; /* Add padding to prevent clipping */
+    color: #33ff33;
+    text-align: center;
+    text-shadow: 0 0 5px #33ff33, 0 0 10px #00ff00;
+}
+
+.scrolling-text h2 {
+    display: inline-block;
+    position: relative;
+    animation: scroll-left-to-right 10s linear infinite;
+}
+
+@keyframes scroll-left-to-right {
+    0% {
+        transform: translateX(-100%); /* Start off-screen to the left */
+    }
+    100% {
+        transform: translateX(100%); /* Move off-screen to the right */
+    }
+}
+
+/* Scrolling text effect */
+

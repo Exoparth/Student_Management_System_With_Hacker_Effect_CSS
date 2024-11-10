@@ -1,0 +1,89 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000; /* Dark background */
+    color: #00ff00; /* Neon green text */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Student Details Card */
+.student-details-card {
+    background-color: #111111;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 255, 0, 0.3); /* Neon green glow */
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid #00ff00;
+}
+
+/* Scrolling text effect */
+.scrolling-text {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    padding: 10px 0; /* Add padding to ensure text is not clipped */
+    color: #33ff33;
+    text-align: center;
+    text-shadow: 0 0 5px #33ff33, 0 0 10px #00ff00;
+}
+
+.scrolling-text p {
+    display: inline-block;
+    position: relative;
+    animation: scroll-left-to-right 10s linear infinite;
+}
+
+@keyframes scroll-left-to-right {
+    0% {
+        transform: translateX(-100%); /* Start off-screen to the left */
+    }
+    100% {
+        transform: translateX(100%); /* Move off-screen to the right */
+    }
+}
+
+/* Text styling for normal paragraphs */
+p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+strong {
+    color: #ff3333; /* Red color for strong text (e.g., labels like "Name", "Email") */
+}
+
+/* Button Styling */
+.animated-button {
+    padding: 10px 20px;
+    border: 1px solid #00ff00;
+    border-radius: 4px;
+    background-color: #111111;
+    color: #00ff00;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Neon glow effect */
+}
+
+.animated-button:hover {
+    background-color: #333333;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8); /* Intense glow on hover */
+}
+
+.animated-button:active {
+    background-color: #222222;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 1); /* Small glow on click */
+}

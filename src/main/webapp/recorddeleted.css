@@ -1,0 +1,49 @@
+@charset "ISO-8859-1";
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-color: #000000; /* Dark background */
+    color: #00ff00; /* Neon green text */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Typewriter Effect on h1 */
+h1 {
+    font-size: 48px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #00ff00; /* Neon green */
+    overflow: hidden; /* Ensures text is hidden until typed */
+    white-space: nowrap; /* Prevent text from wrapping */
+    border-right: 4px solid #00ff00; /* Typewriter cursor effect */
+    width: 0; /* Starts with no visible text */
+    animation: typing 4s steps(40) 1s forwards, blink-caret 0.75s step-end infinite; /* Typewriter effect with blinking cursor */
+}
+
+/* Typewriter Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking Cursor Animation */
+@keyframes blink-caret {
+    50% {
+        border-color: transparent; /* Makes the caret disappear */
+    }
+}
